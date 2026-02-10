@@ -1,0 +1,152 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Build a modern, responsive GGPA Calculator website for college students using vanilla HTML/CSS/JavaScript with a dynamic multi-semester, multi-subject form and SGPA/GGPA calculations.",
+  "architectural_notes": [
+    "Frontend must be built with pure vanilla HTML/CSS/JavaScript (no external frameworks).",
+    "Design must be mobile-friendly and responsive.",
+    "Dynamic UI required for adding/removing semesters and subjects."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-responsive-ggpa-calculator-page-with-a-header-containing-the-title-ggpa-calculator-and-subtitle-calculate-your-academic-performance-easily",
+      "title": "Create a responsive GGPA Calculator page with a header containing the title \"GGPA Calculator\" and subtitle \"Calculate your academic performance easily\".",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-dynamic-card-based-form-that-allows-users-to-add-and-remove-semesters-and-within-each-semester-add-and-remove-subjects",
+      "title": "Implement a dynamic, card-based form that allows users to add and remove semesters, and within each semester add and remove subjects.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-for-each-subject-row-provide-inputs-for-credit-value-and-a-grade-selector-with-options-o-a-a-b-b-c-u-fail",
+      "title": "For each subject row, provide inputs for credit value and a grade selector with options: O, A+, A, B+, B, C, U / Fail.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-convert-grades-to-grade-points-using-the-mapping-o-10-a-9-a-8-b-7-b-6-c-5-u-fail-0-and-compute-sgpa-for-each-semester-based-on-subject-credits-and-grade-points",
+      "title": "Convert grades to grade points using the mapping: O=10, A+=9, A=8, B+=7, B=6, C=5, U / Fail=0, and compute SGPA for each semester based on subject credits and grade points.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-compute-final-ggpa-as-sum-of-all-sgpa-number-of-semesters-and-display-it-rounded-to-2-decimal-places",
+      "title": "Compute final GGPA as (Sum of all SGPA) / (Number of semesters) and display it rounded to 2 decimal places.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-show-a-performance-message-based-on-ggpa-thresholds-ggpa-9-excellent-ggpa-8-very-good-ggpa-7-good-ggpa-7-needs-improvement",
+      "title": "Show a performance message based on GGPA thresholds: GGPA ≥ 9 → \"Excellent 🌟\"; GGPA ≥ 8 → \"Very Good 👍\"; GGPA ≥ 7 → \"Good 🙂\"; GGPA < 7 → \"Needs Improvement 💪\".",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-clean-professional-visual-theme-with-card-based-layout-soft-gradient-background-rounded-inputs-buttons-smooth-hover-transition-effects-clear-labels-placeholders-and-dark-text-on-a-light-background-keep-styling-consistent-across-the-page",
+      "title": "Apply a clean, professional visual theme with: card-based layout, soft gradient background, rounded inputs/buttons, smooth hover/transition effects, clear labels/placeholders, and dark text on a light background; keep styling consistent across the page.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-include-simple-lightweight-icons-for-semesters-and-subjects-e-g-inline-svg-icons-without-introducing-new-external-ui-frameworks",
+      "title": "Include simple, lightweight icons for semesters and subjects (e.g., inline SVG icons) without introducing new external UI frameworks.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-choose-and-enforce-one-coherent-visual-style-direction-colors-typography-and-component-styling-appropriate-for-a-college-focused-calculator-avoiding-a-blue-purple-dominant-palette-unless-explicitly-requested",
+      "title": "Choose and enforce one coherent visual style direction (colors, typography, and component styling) appropriate for a college-focused calculator, avoiding a blue/purple-dominant palette unless explicitly requested.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-prominent-calculate-button-to-the-ggpa-calculator-page-and-change-the-ui-so-the-final-result-cgpa-ggpa-is-shown-only-after-the-user-clicks-this-button",
+      "title": "Add a prominent \"Calculate\" button to the GGPA calculator page and change the UI so the final result (CGPA/GGPA) is shown only after the user clicks this button.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-introduce-explicit-calculated-state-in-the-calculator-store-so-that-edits-to-semesters-subjects-do-not-automatically-display-update-the-final-cgpa-ggpa-until-the-user-clicks-calculate-again",
+      "title": "Introduce explicit \"calculated\" state in the calculator store so that edits to semesters/subjects do not automatically display/update the final CGPA/GGPA until the user clicks \"Calculate\" again.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-use-english-user-facing-text-for-the-final-result-label-to-match-the-user-s-request-by-referencing-cgpa-while-keeping-the-existing-ggpa-calculation-e-g-show-your-cgpa-while-still-computing-via-the-current-ggpa-math-utilities",
+      "title": "Use English user-facing text for the final result label to match the user's request by referencing CGPA while keeping the existing GGPA calculation (e.g., show \"Your CGPA\" while still computing via the current GGPA math utilities).",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Responsive GGPA Calculator UI with header (title + subtitle) and card-based layout, soft gradient background, rounded inputs/buttons, hover transitions, and optional icons",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Dynamic form to add/remove semesters and add/remove subjects per semester; inputs for credits and grade selection per subject",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Grade-to-grade-point conversion using O=10, A+=9, A=8, B+=7, B=6, C=5, U/Fail=0",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Compute SGPA per semester and final GGPA (average of SGPAs across semesters) with GGPA rounded to 2 decimals",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Display performance message based on GGPA thresholds (≥9 Excellent, ≥8 Very Good, ≥7 Good, <7 Needs Improvement)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Add a \"Calculate\" button that, when clicked, computes and displays the final CGPA/GGPA result",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "GGPA Calculator",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

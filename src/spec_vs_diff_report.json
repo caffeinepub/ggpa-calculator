@@ -1,0 +1,15 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-10T13:32:44.371Z",
+  "summary": "Diff implements a click-to-calculate flow for the final GGPA/CGPA result via a new prominent Calculate button in the results area, adds explicit `calculated` + `lastCalculatedResult` state in the Zustand store and resets it on input edits, and updates the final result label to English text referencing CGPA (“Your CGPA”).",
+  "missing_requirements": [],
+  "hallucinated_features": [],
+  "confidence": 0.74,
+  "changed_files": [
+    "frontend-file-summaries.txt",
+    "frontend/src/features/ggpa/components/ResultsCard.tsx",
+    "frontend/src/features/ggpa/useGgpaCalculator.ts",
+    "project_state.json"
+  ]
+}

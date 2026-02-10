@@ -1,0 +1,66 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Gate final CGPA/GGPA display behind an explicit Calculate action",
+  "requirements": [
+    {
+      "id": "REQ-10",
+      "summary": "Add a prominent Calculate button and only show the final CGPA/GGPA result after the user clicks it, reusing existing calculation + validation behavior.",
+      "acceptanceCriteria": [
+        "A \"Calculate\" button is visible on the main calculator page (near the results area).",
+        "Before clicking \"Calculate\", the final CGPA/GGPA numeric result is not displayed.",
+        "After clicking \"Calculate\", the app computes and displays the final CGPA/GGPA result using the existing calculation logic.",
+        "If inputs are incomplete/invalid when the user clicks \"Calculate\", show the existing validation/error messaging in the results area instead of a numeric value."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/features/ggpa/components/ResultsCard.tsx",
+          "operation": "modify",
+          "description": "Add a prominent Calculate button (use shadcn-ui Button + Card presentation) and update the render logic so the numeric final result is only displayed after the user clicks Calculate; when Calculate is clicked with invalid inputs, display the existing validation/error message content in the results area instead of a numeric value. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/GgpaCalculatorPage.tsx",
+          "operation": "modify",
+          "description": "Ensure the results area remains the place where the Calculate action and final result are presented (e.g., via ResultsCard), keeping the button visually near results as required. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Add explicit calculated state in the calculator store and reset/hide the final result whenever inputs change until Calculate is clicked again.",
+      "acceptanceCriteria": [
+        "After a successful calculation, changing any credit/grade, adding/removing a subject, or adding/removing a semester hides (or resets) the previously shown final result and requires clicking \"Calculate\" again to show an updated CGPA/GGPA.",
+        "SGPA per semester may continue to validate/display as it currently does; only the final CGPA/GGPA display is gated by the button click.",
+        "There is a clear initial state after page load where the final result is not shown until \"Calculate\" is clicked."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/features/ggpa/useGgpaCalculator.ts",
+          "operation": "modify",
+          "description": "Introduce an explicit \"calculated\" state plus a stored \"last calculated\" final-result snapshot; add a store action to perform the final calculation on demand and set calculated=true, and update all semester/subject mutators (add/remove/update) to reset calculated=false and clear/hide the previously computed final result so it does not auto-update until Calculate is clicked again."
+        },
+        {
+          "path": "frontend/src/features/ggpa/components/ResultsCard.tsx",
+          "operation": "modify",
+          "description": "Read the new calculated state + stored last-calculated result from the store and render: (1) an initial 'not calculated yet' state that hides the numeric final result, and (2) the last-calculated result (valid numeric or validation message) only after Calculate is clicked. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "Change the final result label to reference CGPA in English while keeping the existing GGPA calculation utilities unchanged.",
+      "acceptanceCriteria": [
+        "The results card heading uses English text that references CGPA (e.g., \"Your CGPA\").",
+        "The numeric value displayed is still computed from the existing calculation functions without changing the grade mapping or formula.",
+        "No other existing labels (e.g., page title \"GGPA Calculator\") are changed unless required to keep the UI consistent."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/features/ggpa/components/ResultsCard.tsx",
+          "operation": "modify",
+          "description": "Update the results card heading label from GGPA wording to English CGPA wording (e.g., \"Your CGPA\") while continuing to format and display the value produced by the existing ggpaMath utilities (no formula/grade mapping changes). Verify the component's usage instructions before implementing."
+        }
+      ]
+    }
+  ]
+}

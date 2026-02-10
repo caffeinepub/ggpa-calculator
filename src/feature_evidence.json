@@ -1,0 +1,60 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-add-a-prominent-calculate-button-to-the-ggpa-calculator-page-and-change-the-ui-so-the-final-result-cgpa-ggpa-is-shown-only-after-the-user-clicks-this-button",
+      "featureTitle": "Add a prominent \"Calculate\" button to the GGPA calculator page and change the UI so the final result (CGPA/GGPA) is shown only after the user clicks this button.",
+      "files": [
+        "frontend/src/features/ggpa/components/ResultsCard.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-introduce-explicit-calculated-state-in-the-calculator-store-so-that-edits-to-semesters-subjects-do-not-automatically-display-update-the-final-cgpa-ggpa-until-the-user-clicks-calculate-again",
+      "featureTitle": "Introduce explicit \"calculated\" state in the calculator store so that edits to semesters/subjects do not automatically display/update the final CGPA/GGPA until the user clicks \"Calculate\" again.",
+      "files": [
+        "frontend/src/features/ggpa/components/ResultsCard.tsx",
+        "frontend/src/features/ggpa/useGgpaCalculator.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-use-english-user-facing-text-for-the-final-result-label-to-match-the-user-s-request-by-referencing-cgpa-while-keeping-the-existing-ggpa-calculation-e-g-show-your-cgpa-while-still-computing-via-the-current-ggpa-math-utilities",
+      "featureTitle": "Use English user-facing text for the final result label to match the user's request by referencing CGPA while keeping the existing GGPA calculation (e.g., show \"Your CGPA\" while still computing via the current GGPA math utilities).",
+      "files": [
+        "frontend/src/features/ggpa/components/ResultsCard.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "kind": "build_request",
+  "title": "Add Calculate button to display CGPA/GGPA only on click",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-10",
+      "text": "Add a prominent \"Calculate\" button to the GGPA calculator page and change the UI so the final result (CGPA/GGPA) is shown only after the user clicks this button.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "To create calculate button and to click this button to show the CGPA"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A \"Calculate\" button is visible on the main calculator page (near the results area).",
+        "Before clicking \"Calculate\", the final CGPA/GGPA numeric result is not displayed.",
+        "After clicking \"Calculate\", the app computes and displays the final CGPA/GGPA result using the existing calculation logic.",
+        "If inputs are incomplete/invalid when the user clicks \"Calculate\", show the existing validation/error messaging in the results area instead of a numeric value."
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Introduce explicit \"calculated\" state in the calculator store so that edits to semesters/subjects do not automatically display/update the final CGPA/GGPA until the user clicks \"Calculate\" again.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "To create calculate button and to click this button to show the CGPA"
+        ]
+      },
+      "acceptanceCriteria": [
+        "After a successful calculation, changing any credit/grade, adding/removing a subject, or adding/removing a semester hides (or resets) the previously shown final result and requires clicking \"Calculate\" again to show an updated CGPA/GGPA.",
+        "SGPA per semester may continue to validate/display as it currently does; only the final CGPA/GGPA display is gated by the button click.",
+        "There is a clear initial state after page load where the final result is not shown until \"Calculate\" is clicked."
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Use English user-facing text for the final result label to match the user's request by referencing CGPA while keeping the existing GGPA calculation (e.g., show \"Your CGPA\" while still computing via the current GGPA math utilities).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "...show the CGPA"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The results card heading uses English text that references CGPA (e.g., \"Your CGPA\").",
+        "The numeric value displayed is still computed from the existing calculation functions without changing the grade mapping or formula.",
+        "No other existing labels (e.g., page title \"GGPA Calculator\") are changed unless required to keep the UI consistent."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not edit files under frontend/src/components/ui (Shadcn UI sources are read-only).",
+    "Backend changes are not required; keep all calculation logic on the frontend."
+  ],
+  "nonGoals": [
+    "Adding backend persistence for semesters/results.",
+    "Adding export, PDF, or sharing features.",
+    "Changing the grade-to-points mapping or the SGPA/GGPA formula."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

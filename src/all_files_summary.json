@@ -1,0 +1,23 @@
+{
+  "backend/main.mo": "Minimal Motoko canister with an empty actor.",
+  "feature_evidence.json": "Feature evidence report mapping requested GGPA calculator features to affected frontend files and components.",
+  "frontend-file-summaries.txt": "Prewritten summaries of all frontend files involved in the GGPA calculator implementation.",
+  "frontend/index.css": "Tailwind base and theme variables defining OKLCH color tokens for light and dark modes.",
+  "frontend/index.html": "HTML entrypoint that mounts the React app and loads main.tsx.",
+  "frontend/src/App.tsx": "Root component rendering the GGPA calculator page.",
+  "frontend/src/features/ggpa/components/ResultsCard.tsx": "Card that shows calculate button, validation errors, or computed CGPA result with performance message.",
+  "frontend/src/features/ggpa/components/SemesterCard.tsx": "Displays a semester with subjects, SGPA status, validation messages, and controls for editing or removing the semester.",
+  "frontend/src/features/ggpa/components/SubjectRow.tsx": "Row UI for entering a subject’s credits and grade with a remove button.",
+  "frontend/src/features/ggpa/ggpaMath.ts": "Utility functions for converting grades to points and calculating SGPA/GGPA with validation and formatting.",
+  "frontend/src/features/ggpa/icons.tsx": "SVG React components for semester and subject icons.",
+  "frontend/src/features/ggpa/types.ts": "Type definitions for Grade, Subject, Semester, and grade options.",
+  "frontend/src/features/ggpa/useGgpaCalculator.ts": "Zustand store for managing semesters, subjects, and GGPA/SGPA calculations with add/update/remove logic.",
+  "frontend/src/hooks/useActor.ts": "Creates and manages a backend actor based on Internet Identity, refetching queries when identity changes.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Provides authentication context using Internet Identity with login, logout, and identity persistence.",
+  "frontend/src/hooks/useQueries.ts": "Placeholder file indicating no backend queries are needed for the calculator.",
+  "frontend/src/index.css": "Tailwind base styles and custom CSS variables for light and dark themes.",
+  "frontend/src/main.tsx": "App entry point setting up React Query and Internet Identity providers before rendering the app.",
+  "frontend/src/pages/GgpaCalculatorPage.tsx": "UI page rendering the GGPA calculator with semester cards, add-semester button, results, and styled layout.",
+  "frontend/tailwind.config.js": "Tailwind configuration defining theme extensions, colors, animations, and plugins.",
+  "project_state.json": "Defines the project's current state, requirements, and existing features for a responsive vanilla JS GGPA calculator. Lists architecture notes, versioning, and all implemented functional and visual features."
+}

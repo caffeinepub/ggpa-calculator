@@ -1,0 +1,14 @@
+{
+  "frontend/src/App.tsx": "Main application component that renders the GGPA Calculator page.",
+  "frontend/src/pages/GgpaCalculatorPage.tsx": "Primary page component with header, semester cards, add semester button, results display, and footer with proper attribution.",
+  "frontend/src/features/ggpa/types.ts": "Type definitions for Grade, Subject, and Semester data structures plus grade options constant.",
+  "frontend/src/features/ggpa/ggpaMath.ts": "Pure utility functions for grade-to-points conversion, SGPA/GGPA calculation, formatting, and performance message generation.",
+  "frontend/src/features/ggpa/useGgpaCalculator.ts": "Zustand store managing calculator state with explicit calculated flag and lastCalculatedResult; all mutators (add/remove/update) reset the calculated state to require clicking Calculate again.",
+  "frontend/src/features/ggpa/components/SemesterCard.tsx": "Card component displaying a semester with its subjects, SGPA, add/remove controls, and validation messages.",
+  "frontend/src/features/ggpa/components/SubjectRow.tsx": "Individual subject row with credit input, grade selector, and remove button.",
+  "frontend/src/features/ggpa/components/ResultsCard.tsx": "Results display card that shows a Calculate button initially, displays CGPA result only after clicking Calculate, and resets when inputs change; uses \"CGPA\" label instead of \"GGPA\".",
+  "frontend/src/features/ggpa/icons.tsx": "Lightweight inline SVG icon components for semester and subject visual indicators.",
+  "frontend/src/index.css": "Global styles with OKLCH color system using teal/emerald/green palette for light and dark modes.",
+  "frontend/tailwind.config.js": "Tailwind configuration with extended theme tokens, custom shadows, and animation utilities.",
+  "frontend/src/hooks/useQueries.ts": "Empty placeholder file as this is a frontend-only calculator with no backend integration needed."
+}
